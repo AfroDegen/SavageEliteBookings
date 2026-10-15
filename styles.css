@@ -1,0 +1,174 @@
+:root{
+  --red:#8e1111;
+  --gold:#dbc17a;
+  --black:#090909;
+  --white:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-snap-type:y mandatory;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",sans-serif;
+}
+
+.snap-container{
+  height:100vh;
+  overflow-y:scroll;
+}
+
+.panel{
+  min-height:100vh;
+  scroll-snap-align:start;
+  position:relative;
+}
+
+.hero{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.5),
+      rgba(0,0,0,.9)
+    ),
+    url("hero.jpg") center/cover;
+  display:flex;
+  align-items:center;
+}
+
+.content{
+  width:min(90%,1200px);
+  margin:auto;
+}
+
+.eyebrow{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:1rem;
+}
+
+.hero h1{
+  font-size:clamp(3rem,10vw,6rem);
+  line-height:.95;
+}
+
+.hero h1 span{
+  color:#d33;
+  display:block;
+}
+
+.tagline{
+  font-size:1.2rem;
+  opacity:.9;
+  margin-top:1rem;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+  margin:2rem 0;
+}
+
+.services div{
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  padding:1rem;
+  border-radius:14px;
+}
+
+.cta{
+  display:inline-block;
+  padding:16px 32px;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    #811111,
+    #d93131
+  );
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.about{
+  background:
+  linear-gradient(
+    180deg,
+    #090909,
+    #111
+  );
+  display:flex;
+  align-items:center;
+}
+
+.narrow{
+  max-width:900px;
+}
+
+.about h2{
+  font-size:3rem;
+  margin-bottom:1rem;
+}
+
+.about p{
+  color:#cfcfcf;
+  line-height:1.7;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+  margin:2rem 0;
+}
+
+.card{
+  padding:1.5rem;
+  border-radius:20px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.card h3{
+  color:var(--gold);
+  margin-bottom:.5rem;
+}
+
+.locations{
+  margin:2rem 0;
+}
+
+.secondary-btn{
+  display:inline-block;
+  padding:14px 28px;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:999px;
+  text-decoration:none;
+}
+
+@media(max-width:768px){
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:3.5rem;
+  }
+
+  .about h2{
+    font-size:2.2rem;
+  }
+}
